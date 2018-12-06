@@ -147,5 +147,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   
+  <script>
+    $('.carousel').carousel({
+      interval: 1000,
+      pause: "hover"
+    })
+  </script>
+  
+  <script>
+    var bodyWidth = document.body.clientWidth; // web body の横幅取得
+    var bodyWidth = document.body.clientHeight; // web body の高さ取得 (body自体なので基本 長くなる)
+//    var bodyHeight = $(window).witdh();　// device window の横幅取得
+    var bodyHeight = $(window).height(); // device windows の高さ取得
+    
+    $('.carousel').each(function(){
+      $(this).find(".carousel-item img").css({'width':bodyWidth,'height':bodyHeight});
+      
+// = $(this).find(".carousel-item img").css({'width':'100vw','height':'100vh'});
+    });
+  </script>
 </body>
 </html>
